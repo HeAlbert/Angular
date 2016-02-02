@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="myModule">
+<head>
+    <title></title>
+    <script src="js/angular.js"></script>
+    <script src="js/demo.js"></script>
+</head>
+<body>
+    <!-- what i learn today:
+        ng-app: for module
+        ng-controller: for method
+        ng-src: fro src url
+        ng-model : get the data
+        ng-reapeat: for list of data -->
+    <div ng-controller="myController">
+        {{country.name}}<br />
+        {{country.Capital}}<br />
+        <img ng-src="{{country.flag}}" alt="{{country.name +'Flag'}}">
+    </div>
+    <div ng-controller="myController">
+        <table>
+            <tr>
+                <td>First Name</td>
+                <td><input type="text" ng-model="employee.firstName" /></td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td><input type="text" ng-model="employee.lastName" /></td>
+            </tr>
+            <tr>
+                <td>First Name</td>
+                <td><input type="text" ng-model="employee.gender" /></td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>First Name</td>
+                <td>{{employee.firstName}}</td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td>{{employee.lastName}}</td>
+            </tr>
+            <tr>
+                <td>First Name</td>
+                <td>{{employee.gender}}</td>
+            </tr>
+        </table>
+
+
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Gender</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="emp in employees">
+                    <td>{{emp.firstName}}</td>
+                    <td>{{emp.lastName}}</td>
+                    <td>{{emp.gender}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
